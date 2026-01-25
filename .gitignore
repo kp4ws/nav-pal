@@ -1,0 +1,25 @@
+# Node / Expo
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Expo / React Native
+.expo/
+.expo-shared/
+
+# Python / backend
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables
+.env
+*.env
+
+# macOS / system
+.DS_Store
+Thumbs.db
