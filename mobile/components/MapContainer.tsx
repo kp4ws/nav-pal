@@ -1,23 +1,28 @@
-import {MapContainer as Map, Marker, Popup, TileLayer} from 'react-leaflet'
+import MapView, {Marker } from 'react-native-maps';
+import { StyleSheet } from 'react-native';
 
 export default function MapContainer() {
     return (
-        <Map
-            center={[51.505, -0.09]}
-            zoom={13}
-            scrollWheelZoom={false}
-            style={{ height: '400px', width: '100%' }}
+        <MapView
+            style={styles.map}
+            initialRegion={{
+                latitude: 37.7749,
+                longitude: -122.4194,
+                latitudeDelta: 0.05,
+                longitudeDelta: 0.05,
+            }}
         >
-            <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap Leaflet</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            <Marker 
+                coordinate={{latitude: 37.7749, longitude: -122.4194}}
+                title="San Francisco"
+                description="Hello Map"
             />
-
-            <Marker position={[51.505, -0.09]}>
-                <Popup>
-                    An approach to solve using OSM in expo web platform.
-                </Popup>
-            </Marker>
-        </Map>
+        </MapView>
     );
 }
+
+const styles = StyleSheet.create({
+    map: {
+        flex: 1,
+    },
+})
